@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { 
-  ExternalLink, 
-  Sparkles, 
-  Heart, 
-  MapPin, 
-  Calendar, 
-  ShieldCheck, 
-  TrendingDown, 
-  Tag, 
+import {
+  ExternalLink,
+  Sparkles,
+  Heart,
+  MapPin,
+  Calendar,
+  ShieldCheck,
+  TrendingDown,
+  Tag,
   Info,
   CheckCircle2
 } from "lucide-react";
@@ -42,19 +42,19 @@ export default function AuctionCard({ item, onAnalisar, isFavorito, onToggleFavo
     <article className="auction-card">
       {/* Imagem do Lote com Badges */}
       <div className="card-media-wrapper">
-        <img 
-          src={imagemSrc} 
-          alt={item.titulo} 
-          className="card-image" 
+        <img
+          src={imagemSrc}
+          alt={item.titulo}
+          className="card-image"
           onError={() => setImagemErro(true)}
           loading="lazy"
         />
-        
+
         {/* Badges sobre a foto */}
         <div className="media-overlay-top">
           <span className="badge-category">{item.categoria || "Leilão"}</span>
-          <button 
-            type="button" 
+          <button
+            type="button"
             className={`favorite-card-btn ${isFavorito ? "active" : ""}`}
             onClick={(e) => {
               e.stopPropagation();
@@ -141,8 +141,8 @@ export default function AuctionCard({ item, onAnalisar, isFavorito, onToggleFavo
         {/* Ações do Card */}
         <div className="card-actions">
           {/* Botão de Análise com Gemini IA */}
-          <button 
-            type="button" 
+          <button
+            type="button"
             className="ai-analyze-btn"
             onClick={() => onAnalisar(item)}
             title="Ver análise completa de risco e oportunidade com IA"
